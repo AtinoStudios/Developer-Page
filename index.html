@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atino Studios — Jeevan Bohara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:      #ffffff;
+    --bg2:     #ffffff;
+    --card:    #FDF7EE;
+    --border:  rgba(160, 82, 45, 0.18);
+    --border2: rgba(160, 82, 45, 0.32);
+    --accent:  #A0522D;
+    --accent2: #7A3B1E;
+    --dark:    #3B1F0E;
+    --muted:   #8a6245;
+    --rule:    #C4843E;
+    --text:    #2A1506;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* subtle warm texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 180px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    padding: 30px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+  }
+  .nav-wordmark {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 3px;
+    color: var(--accent2);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-wordmark .nav-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  .nav-wordmark .studios-text {
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--muted);
+  }
+  .nav-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    border: 1px solid var(--border2);
+    padding: 5px 14px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 64px 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-logo {
+    width: 400px;
+    max-width: 90vw;
+    margin-bottom: 36px;
+  }
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 440px;
+  }
+  .hero-divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rule), transparent);
+  }
+  .hero-divider-diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+  .hero-sub {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+  .owner-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 2px;
+    padding: 10px 20px 10px 10px;
+  }
+  .owner-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .owner-name {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+  }
+  .owner-role {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ── SECTIONS ── */
+  .section { margin-bottom: 56px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border2), transparent);
+  }
+  .section-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* ── ABOUT ── */
+  .about-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 19px;
+    line-height: 1.85;
+    color: #5a3820;
+  }
+
+  /* ── GAME CARD ── */
+  .game-card {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .game-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 26px 26px 18px;
+  }
+  .game-icon-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--border2);
+  }
+  .game-info { flex: 1; }
+  .game-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .game-desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 3px 11px;
+    border-radius: 2px;
+    background: rgba(160,82,45,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(160,82,45,0.25);
+  }
+  .tag.gold {
+    background: rgba(160,82,45,0.06);
+    color: var(--accent);
+    border-color: rgba(160,82,45,0.3);
+  }
+  .play-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 14px;
+    border-bottom: 1px solid rgba(160,82,45,0.35);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .play-link:hover { color: var(--dark); border-color: var(--dark); }
+
+  .game-inner-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2), transparent);
+    margin: 0 26px 20px;
+  }
+
+  .screenshots {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 0 26px 22px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(160,82,45,0.3) transparent;
+  }
+  .screenshots::-webkit-scrollbar { height: 4px; }
+  .screenshots::-webkit-scrollbar-thumb { background: rgba(160,82,45,0.35); border-radius: 2px; }
+  .screenshots img {
+    height: 155px;
+    width: auto;
+    border-radius: 6px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    object-fit: cover;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 520px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 18px 20px;
+    transition: border-color 0.2s;
+  }
+  .contact-card:hover { border-color: var(--border2); }
+  .contact-label {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 7px;
+  }
+  .contact-value {
+    font-size: 14px;
+    color: var(--dark);
+    line-height: 1.6;
+    word-break: break-all;
+  }
+  .contact-value a { color: var(--accent2); text-decoration: none; }
+  .contact-value a:hover { color: var(--dark); text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 26px 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+  }
+  .footer-link {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .footer-link:hover { color: var(--dark); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero    { animation: fadeUp 0.6s ease both; }
+  .section { animation: fadeUp 0.6s ease both; }
+  .section:nth-of-type(1) { animation-delay: 0.1s; }
+  .section:nth-of-type(2) { animation-delay: 0.2s; }
+  .section:nth-of-type(3) { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-wordmark" href="#">
+      ATINO
+      <div class="nav-diamond"></div>
+      <span class="studios-text">STUDIOS</span>
+    </a>
+    <span class="nav-badge">Android Game Dev</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-logo" src="atino_studios_logo_v3.svg" alt="Atino Studios" style="transform: scale(2);" />
+
+    <div class="hero-divider">
+
+    </div>
+
+    <p class="hero-sub">High-energy action games with thrilling multiplayer co-op experiences for Android. Published on Google Play.</p>
+
+    <div class="owner-pill">
+      <div class="owner-avatar">JB</div>
+      <div>
+        <div class="owner-name">Jeevan Bohara</div>
+        <div class="owner-role">Founder &amp; Developer, Atino Studios</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-label">About</span>
+      <div class="section-rule"></div>
+      <div class="section-diamond"></div>
+    </div>
+    <p class="about-text">
+      Atino Studios is an independent Android game studio founded and operated by Jeevan Bohara. The studio focuses on multiplayer co-op action games published on Google Play, monetized through in-app purchases and ad revenue.
+    </p>
+  </div>
+
+  <!-- GAMES -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-label">Games</span>
+      <div class="section-rule"></div>
+      <div class="section-diamond"></div>
+    </div>
+
+    <div class="game-card">
+      <div class="game-card-top">
+        <img class="game-icon-img"
+          src="https://play-lh.googleusercontent.com/Ws175G5HX6OJaVi98NJjBcETpj2Qieo0RksF5FmzufJuz__U0LjndqTE9AjW5FCVCuTzzv874HnCVXu-kKdpmQ=w240-h480"
+          alt="Dash Fire icon" />
+        <div class="game-info">
+          <div class="game-name">Dash Fire</div>
+          <div class="game-desc">Dash, shoot, and survive in a top-down co-op action game. Team up online or via LAN and battle through waves of enemies.</div>
+          <div class="tags">
+            <span class="tag">Action</span>
+            <span class="tag">Multiplayer Co-op</span>
+            <span class="tag">Online &amp; LAN</span>
+            <span class="tag gold">Google Play</span>
+          </div>
+          <a class="play-link" href="https://play.google.com/store/apps/details?id=com.atinostudios.dashfire" target="_blank">
+            View on Google Play →
+          </a>
+        </div>
+      </div>
+
+      <div class="game-inner-rule"></div>
+
+      <div class="screenshots">
+        <img src="https://play-lh.googleusercontent.com/6M8vI34RlBUR5Kfi8elMd_IFtq7JTTXmGcMerkmXe-F8W0xIIHEzGs_u657qRNb9Gzk=w526-h296" alt="Dash Fire screenshot 1" />
+        <img src="https://play-lh.googleusercontent.com/XGqxvQF0wdSBvFHk3TeD32xBf6Dypf15QvN28sKoQ4AIWcwaAwlS3oUEoJQ8LgpjxJH5=w526-h296" alt="Dash Fire screenshot 2" />
+        <img src="https://play-lh.googleusercontent.com/XDs5d4sPtzDfEPudjFMYz_sHSgPMdTQ7a88oyMWUQZSOCPiq77qnf4cb1vuwM8RxaSs=w526-h296" alt="Dash Fire screenshot 3" />
+        <img src="https://play-lh.googleusercontent.com/-CE5_L7X8gkQYEUfSho3mvQRygqMAunvFFGDbqoiya9LM0ALiY5PRzgmaY-14Kvo7Lw=w526-h296" alt="Dash Fire screenshot 4" />
+        <img src="https://play-lh.googleusercontent.com/IyfKP68OR1WSv07rvY9DPkoLFXrRDc9RKay97hH_MCLPAYnc602YPbXC3Ay6JttgQQ=w526-h296" alt="Dash Fire screenshot 5" />
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <div class="section-rule"></div>
+      <div class="section-diamond"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:jeevanbohara22@gmail.com">jeevanbohara22@gmail.com</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Bedkot Municipality-10, Kanchanpur<br>Mahendranagar – 10400, Nepal</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-label">Developer Profile</div>
+        <div class="contact-value"><a href="https://play.google.com/store/apps/dev?id=8405688763050750132" target="_blank">Atino Studios on Google Play</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-label">Studio Owner</div>
+        <div class="contact-value">Jeevan Bohara</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2025 Atino Studios · Jeevan Bohara</span>
+    <a class="footer-link" href="https://play.google.com/store/apps/dev?id=8405688763050750132" target="_blank">Google Play →</a>
+  </footer>
+
+</div>
+</body>
+</html>
