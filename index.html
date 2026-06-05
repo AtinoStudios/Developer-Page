@@ -52,7 +52,6 @@
     padding: 0 28px;
   }
 
-  /* ── NAV ── */
   nav {
     padding: 30px 0 0;
     display: flex;
@@ -98,7 +97,6 @@
     text-transform: uppercase;
   }
 
-  /* ── HERO ── */
   .hero {
     padding: 64px 0 16px;
     display: flex;
@@ -118,18 +116,6 @@
     margin-bottom: 28px;
     width: 100%;
     max-width: 440px;
-  }
-  .hero-divider-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--rule), transparent);
-  }
-  .hero-divider-diamond {
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    transform: rotate(45deg);
-    flex-shrink: 0;
   }
   .hero-sub {
     font-family: 'EB Garamond', serif;
@@ -171,7 +157,6 @@
     margin-top: 2px;
   }
 
-  /* ── SECTIONS ── */
   .section { margin-bottom: 56px; }
 
   .section-header {
@@ -202,7 +187,6 @@
     flex-shrink: 0;
   }
 
-  /* ── ABOUT ── */
   .about-text {
     font-family: 'EB Garamond', serif;
     font-size: 19px;
@@ -210,7 +194,6 @@
     color: #5a3820;
   }
 
-  /* ── GAME CARD ── */
   .game-card {
     background: var(--card);
     border: 1px solid var(--border2);
@@ -307,7 +290,6 @@
     object-fit: cover;
   }
 
-  /* ── CONTACT ── */
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -341,7 +323,6 @@
   .contact-value a { color: var(--accent2); text-decoration: none; }
   .contact-value a:hover { color: var(--dark); text-decoration: underline; }
 
-  /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
     padding: 26px 0 44px;
@@ -367,7 +348,6 @@
   }
   .footer-link:hover { color: var(--dark); }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -383,7 +363,6 @@
 
 <div class="wrap">
 
-  <!-- NAV -->
   <nav>
     <a class="nav-wordmark" href="#">
       ATINO
@@ -393,14 +372,10 @@
     <span class="nav-badge">Android Game Dev</span>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <img class="hero-logo" src="https://res.cloudinary.com/dkltdynei/image/upload/v1780478899/atino_studios_logo_v3_v11ngy.svg" alt="Atino Studios" style="transform: scale(2);" />
-
     <div class="hero-divider"></div>
-
     <p class="hero-sub">High-energy action games with thrilling multiplayer co-op experiences for Android. Published on Google Play.</p>
-
     <div class="owner-pill">
       <img class="owner-avatar" src="https://res.cloudinary.com/dkltdynei/image/upload/v1780477504/Passport_size_yzzyjo.jpg" alt="Jeevan Bohara" />
       <div>
@@ -410,7 +385,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <div class="section">
     <div class="section-header">
       <span class="section-label">About</span>
@@ -422,7 +396,6 @@
     </p>
   </div>
 
-  <!-- GAMES -->
   <div class="section">
     <div class="section-header">
       <span class="section-label">Games</span>
@@ -433,7 +406,7 @@
     <div class="game-card">
       <div class="game-card-top">
         <img class="game-icon-img"
-          src="https://play-lh.googleusercontent.com/Ws175G5HX6OJaVi98NJjBcETpj2Qieo0RksF5FmzufJuz__U0LjndqTE9AjW5FCVCuTzzv874HnCVXu-kKdpmQ=w240-h480"
+          src="https://play-lh.googleusercontent.com/bT2AZsJWGyXseqzbumfinS3z8e5SJgsDZHiVY3VrgXxqIESYKEZZlbw8QdWNkkhEA-MW1cw0yfadZ15wbZCE=w240-h480"
           alt="Dash Fire icon" />
         <div class="game-info">
           <div class="game-name">Dash Fire</div>
@@ -453,26 +426,16 @@
       <div class="game-inner-rule"></div>
 
       <div class="screenshots">
-        <img src="https://play-lh.googleusercontent.com/6M8vI34RlBUR5Kfi8elMd_IFtq7JTTXmGcMerkmXe-F8W0xIIHEzGs_u657qRNb9Gzk=w526-h296" alt="Dash Fire screenshot 1" />
-        <img src="https://play-lh.googleusercontent.com/XGqxvQF0wdSBvFHk3TeD32xBf6Dypf15QvN28sKoQ4AIWcwaAwlS3oUEoJQ8LgpjxJH5=w526-h296" alt="Dash Fire screenshot 2" />
-        <img src="https://play-lh.googleusercontent.com/XDs5d4sPtzDfEPudjFMYz_sHSgPMdTQ7a88oyMWUQZSOCPiq77qnf4cb1vuwM8RxaSs=w526-h296" alt="Dash Fire screenshot 3" />
-        <img src="https://play-lh.googleusercontent.com/-CE5_L7X8gkQYEUfSho3mvQRygqMAunvFFGDbqoiya9LM0ALiY5PRzgmaY-14Kvo7Lw=w526-h296" alt="Dash Fire screenshot 4" />
-        <img src="https://play-lh.googleusercontent.com/IyfKP68OR1WSv07rvY9DPkoLFXrRDc9RKay97hH_MCLPAYnc602YPbXC3Ay6JttgQQ=w526-h296" alt="Dash Fire screenshot 5" />
-        <img src="https://play-lh.googleusercontent.com/eCBdZZuCLdo5NUokbjzFT7nZFrDTyk1Zn6GxYVGg6LCDtF9Pagd_7IAkpgOipP6hzw=w526-h296" alt="Dash Fire screenshot 6" />
-        <img src="https://play-lh.googleusercontent.com/iKrTTBSUPTsDqXZ0Jt7ycxrI2pogot0mWCtXJ2D0adtS7xpnMGs3ZziBlTyVe6HbFfQ=w526-h296" alt="Dash Fire screenshot 7" />
-        <img src="https://play-lh.googleusercontent.com/Qo3Be48rlRu5FB18-v4bX-YXgznQCyAkuGfziw9O9DDsJgRdeehpUY5qO5tzIDZnVQ=w526-h296" alt="Dash Fire screenshot 8" />
-        <img src="https://play-lh.googleusercontent.com/RcTvdUsZjt-FPh4OfUJTQ7LGkDE8B7uAvm_0Tten5c4VGtiykgeLGcqQIE_dxHT4dI8=w526-h296" alt="Dash Fire screenshot 9" />
-        <img src="https://play-lh.googleusercontent.com/H9Ys-4T4-e5qmExZ8OTsL511Pd8EmbFT36eDR6pELjAResDKqLj86HvcrSda6ZlMWA=w526-h296" alt="Dash Fire screenshot 10" />
-        <img src="https://play-lh.googleusercontent.com/hOpjg224b6BTSBIrXmM7ucxfQ7uKA3XC1SSqN01vcIeowPigYK1LpZH52XNxI0J8vQ=w526-h296" alt="Dash Fire screenshot 11" />
-        <img src="https://play-lh.googleusercontent.com/nm7nFfYdIvTU2QhGSYBi0oNrCZ_CvjvadydMuF6s569o62Gi7JoSb2OW3RtZyHQCmBs=w526-h296" alt="Dash Fire screenshot 12" />
-        <img src="https://play-lh.googleusercontent.com/tALIwv8GDq1VQm3PjwyDstJB6uo_qyY5ZU_NRo5syfHGY8x6afRV1Y0WkwX4WxwdTnfP=w526-h296" alt="Dash Fire screenshot 13" />
-        <img src="https://play-lh.googleusercontent.com/vsuUFfdUPocgN0zIbKVwJmLJTEjq_PMCGk_j_WE_AFGVquj1Ey0zgdw-EZX2G7bIki0m=w526-h296" alt="Dash Fire screenshot 14" />
-        <img src="https://play-lh.googleusercontent.com/Wg_adcbXh0Vlr5ik7J7smrQzmN2DKaVso_hK3OLojWqIKvqCkHZ9QisKTOq0_YDQ5UM=w526-h296" alt="Dash Fire screenshot 15" />
+        <img src="https://play-lh.googleusercontent.com/_TANkzto6WcdUZlpz3zHUhz_Unz40nYZO1Ebjg-nqcLMdWYu3zFTIIAH0IjoF3At_zDMK5gy_56BVy7VeDnMhA=w526-h296" alt="Dash Fire screenshot 1" />
+        <img src="https://play-lh.googleusercontent.com/lCeQotAlao4wLZSiXt8PX-DjJdfEsx5YWHpwauhINPJ-McWb-oP7SDOOtwLDNEsUtRSqk6-6O9vkHSxyj_Nglg=w526-h296" alt="Dash Fire screenshot 2" />
+        <img src="https://play-lh.googleusercontent.com/1KSebJOgZaxqJe8fIJn5qbLkXIxFshzpsjUup7p2MjU4I0m04Y2IOfrb8yj8uwaEhzeVG7rWmMjcY0JXP0bb5A=w526-h296" alt="Dash Fire screenshot 3" />
+        <img src="https://play-lh.googleusercontent.com/vriaciTLy52AV4YxwIYYz5DbnazA1HTheICCy6ShT-AjvmAiUsU1tjl7v79Vi2_uAVQhRKxBwARx8A7QlIBHiQ=w526-h296" alt="Dash Fire screenshot 4" />
+        <img src="https://play-lh.googleusercontent.com/gEFOPKmjZaRxwVOr8a5-kP2WF0HbcAFSIgx1TvRyy2say-SHyq2abgCAl53IBcYkc5-jnTogidf8zRHLmcI2sQ=w526-h296" alt="Dash Fire screenshot 5" />
+        <img src="https://play-lh.googleusercontent.com/OO5V4SKxmb7sE-YobCuyrCaVp8K1xeYFsx7u4uxln0l372rXcagBva2LBeScC-RjeIy9hQSiWHjd0-0B883xFA=w526-h296" alt="Dash Fire screenshot 6" />
       </div>
     </div>
   </div>
 
-  <!-- CONTACT -->
   <div class="section">
     <div class="section-header">
       <span class="section-label">Contact</span>
@@ -503,7 +466,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <span class="footer-text">© 2025 Atino Studios · Jeevan Bohara</span>
     <a class="footer-link" href="https://play.google.com/store/apps/dev?id=8405688763050750132" target="_blank">Google Play →</a>
